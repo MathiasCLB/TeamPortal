@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface TileMapper {
     TileDto toDto(Tile tile);
     List<TileDto> toDtoList(List<Tile> tiles);
