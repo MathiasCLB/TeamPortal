@@ -1,9 +1,12 @@
 package org.esaip.teamportal.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+
 
 import java.util.UUID;
 
@@ -11,9 +14,12 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Setter
+@Entity
 public class Tile {
+    @Id
     private UUID id;
-    private String title;
-    private String description;
-    private Boolean done;
+    private String width;
+    private String height;
+    private String color;
+    private Boolean active;
 }
