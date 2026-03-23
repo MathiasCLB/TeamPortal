@@ -4,7 +4,10 @@ import org.esaip.teamportal.dto.TileDto;
 import org.esaip.teamportal.model.Tile;
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring")
+import java.util.List;
+
+@Mapper
 public interface TileMapper {
     TileDto toDto(Tile tile);
+    List<TileDto> toDtoList(List<Tile> tiles);
 }

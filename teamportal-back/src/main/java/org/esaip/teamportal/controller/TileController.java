@@ -4,8 +4,10 @@ import lombok.RequiredArgsConstructor;
 import org.esaip.teamportal.dto.TileDto;
 import org.esaip.teamportal.service.TileService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -13,8 +15,14 @@ import java.util.UUID;
 public class TileController {
     private final TileService tileService;
 
-    @GetMapping("/tile")
-    public TileDto getTile() {
-        return tileService.getTile();
+    @GetMapping("/tile/{id}")
+    public TileDto getTile(@PathVariable UUID id) {
+        return tileService.getTile(id);
     }
+
+    @GetMapping("/tile")
+    public List<TileDto> getAllTile() {
+        return tileService.getAllTile();
+    }
+
 }
